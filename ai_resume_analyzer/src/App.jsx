@@ -7,7 +7,7 @@ function App() {
   const [history, setHistory] = useState([]);
  // const [error, setError] = useState("");
 
- const loadHistory = async () => {
+ /*const loadHistory = async () => {
   try {
     const response = await fetch("http://localhost:5000/history");
     const data = await response.json();
@@ -15,7 +15,7 @@ function App() {
   } catch (err) {
     console.log(err);
   }
-};
+}; */
 
   const handleUpload = async () => {
 
@@ -41,7 +41,7 @@ function App() {
     console.log(data);
 
     setResult(data.analysis);
-    await loadHistory();
+   // await loadHistory();
     } catch(error) {
 
     console.log(error);
@@ -51,9 +51,9 @@ function App() {
   }
   };
   
-  useEffect(() => {
+  /*useEffect(() => {
   loadHistory();
-}, []);
+}, []); */
 
 const improvement =
   history.length > 1
