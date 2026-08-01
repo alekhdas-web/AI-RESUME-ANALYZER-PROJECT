@@ -12,7 +12,7 @@ const mammoth = require('mammoth');
 
 require('dotenv').config();
 
-const db = require("./database");
+//const db = require("./database");
 
 const { GoogleGenAI } = require("@google/genai");
 
@@ -128,7 +128,7 @@ ${resumeText}
 
 const score = scoreMatch ? parseInt(scoreMatch[0]) : 0;
 
-db.query(
+/*db.query(
   "INSERT INTO resume_history(resume_name,score,feedback) VALUES(?,?,?)",
   [
     req.file.originalname,
@@ -142,7 +142,7 @@ db.query(
       console.log("✅ Saved to MySQL");
     }
   }
-);
+); */
 
   console.log("AI Response:");
   console.log(response);
@@ -167,7 +167,7 @@ db.query(
 }
 );
 
-app.get("/history", (req, res) => {
+/*app.get("/history", (req, res) => {
 
     db.query(
          `SELECT *,
@@ -188,10 +188,11 @@ app.get("/history", (req, res) => {
         }
     );
 
-});
+}); */
 
-app.listen(5000, () => {
-console.log("Server running on port 5000");
-});
+const PORT = process.env.PORT || 5000;
 
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 
