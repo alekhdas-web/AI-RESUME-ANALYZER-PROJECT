@@ -29,7 +29,8 @@ function App() {
     formData.append("resume", file);
 
     const response = await fetch(
-      "http://localhost:5000/analyze",
+  "https://ai-resume-analyzer-project-ji10.onrender.com/analyze",
+  
       {
         method: "POST",
         body: formData
